@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=VisiteurSauvegarde
+comment0.text=\ \ \r\n\ Visiteur\ qui\ impl\u00E9mente\ le\ clone\ visiteur\ du\ cours\ pour\ pouvoir\ ne\ pas\ sauvegarder\ le\ pointeur\ dans\ \ \r\n\ le\ Memento\ \ \r\n
+comment1.params=c
+comment1.target=java.util.HashMap\ visite(question1.Contributeur)
+comment2.params=g
+comment2.target=java.util.HashMap\ visite(question1.GroupeDeContributeurs)
+numComments=3
