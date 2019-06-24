@@ -6,7 +6,8 @@ public class Contributeur extends Cotisant{
   
   public Contributeur(String nom, int somme){
     super(nom);
-    // a completer
+    if (somme < 0) throw new RuntimeException("nombre négatif !!!");
+        this.solde = somme;
   }
   
   public int solde(){
@@ -17,25 +18,29 @@ public class Contributeur extends Cotisant{
     return 1;
   }
 	public void debit(int somme) throws SoldeDebiteurException{
-	  // a completer
-	}
+        if (somme < 0) throw new RuntimeException("Nombre négatif !!!");
+        int soldeTemp = solde - somme;
+        if (soldeTemp < 0) throw new SoldeDebiteurException();
+        solde = soldeTemp;
+    }
 	
 	/**
 	 * throws RuntimeException new RuntimeException("nombre nÃ©gatif !!!");
 	 */
   public  void credit(int somme){
-	  // a completer
+	  if (somme < 0) throw new RuntimeException("Nombre négatif !!!");
+        solde += somme;
 	}
 	
 	/**
-	 * throws RuntimeException new RuntimeException("nombre nÃ©gatif !!!");
+	 * throws RuntimeException new RuntimeException("Nombre négatif !!!");
 	 */
   public void affecterSolde(int somme){
-    // if(somme <0) throw new RuntimeException("nombre nÃ©gatif !!!");
+    // if(somme <0) throw new RuntimeException("Nombre négatif !!!");
     try{
-      debit(solde()); credit(somme);// mode Ã©lÃ©gant ... 
+      debit(solde()); credit(somme);// mode élégant ... 
     }catch(SoldeDebiteurException sde){ 
-      // exception peu probable
+      // exception peu probable 
       this.solde = somme; // mode efficace ...
     }
   }
